@@ -10,20 +10,20 @@ def Merge(A , low, mid, high):
     n1 = mid - low + 1
     n2 = high - mid
     
-    Larray = [0] * n1
-    Rarray = [0] * n2
+    Larray = [0] * (n1)
+    Rarray = [0] * (n2)
 
     #Create temporary arrays to hold data
     for i in range(0, n1):
         Larray[i] = A[low + i]
     for j in range (0, n2):
-        Rarray[j] = A[mid + j]
+        Rarray[j] = A[mid + j + 1]
         
 
     #Merge Two subarrays back into original array
     i = 0
     j = 0
-    k = 1
+    k = low
 
     while (i < n1) and (j < n2):
         if Larray[i] <= Rarray[j]:
@@ -47,9 +47,8 @@ def Merge(A , low, mid, high):
         k = k + 1
 
 Arr = [8, 13, 6, 20, 11, 2, 7, 16]
-Larray = []
-Rarray = []
 S = len(Arr)
-MergeSort(Arr, 0, S)
-for i in range (len(Arr)):
-    print(Arr[i], " ")
+MergeSort(Arr, 0, S - 1)
+for i in range (S):
+    print("%d" % Arr[i],end=" ")
+print()
