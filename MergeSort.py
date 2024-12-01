@@ -28,23 +28,23 @@ def Merge(A , low, mid, high):
     while (i < n1) and (j < n2):
         if Larray[i] <= Rarray[j]:
             A[k] = Larray[i]
-            i = i + 1 
+            i += 1 
         else:
             A[k] = Rarray[j]
-            j = j + 1
-        k = k + 1
+            j += 1 
+        k += 1 
 
     #Copy remaining elements in Larray
     while i < (n1):
         A[k] = Larray[i]
-        i = i + 1
-        k = k + 1
+        i += 1 
+        k += 1 
     
     #Copy elements of Rarray
     while j < n2:
         A[k] = Rarray[j]
-        j = j + 1
-        k = k + 1
+        j += 1 
+        k += 1 
 
 Arr = [8, 13, 6, 20, 11, 2, 7, 16]
 S = len(Arr)
